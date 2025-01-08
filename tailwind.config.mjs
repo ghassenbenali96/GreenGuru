@@ -7,9 +7,27 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      animation: {
+        radiate: "radiate 2s infinite",
+      },
+      keyframes: {
+        radiate: {
+          "0%": {
+            transform: "scale(1)",
+            opacity: "0.3",
+            "box-shadow": "0 0 10px rgba(0, 0, 0, 0.5)",
+          },
+          "50%": {
+            transform: "scale(1.8)",
+            opacity: "0.8",
+            "box-shadow": "0 0 30px rgba(176, 250, 176, 0.7)",
+          },
+          "100%": {
+            transform: "scale(2.5)",
+            opacity: "0",
+            "box-shadow": "0 0 50px rgba(0, 255, 0, 0)",
+          },
+        },
       },
     },
   },
