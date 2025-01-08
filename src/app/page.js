@@ -4,6 +4,8 @@ import Head from "next/head";
 import { PiPlant } from "react-icons/pi";
 import { Colab } from "@lobehub/icons";
 import Preprocessing from "./preprocessing";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   // Get Starting
@@ -128,7 +130,7 @@ export default function Home() {
           {showForm && (
             <div
               className="fixed top-[65%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white bg-opacity-30 p-6 rounded-xl shadow-lg transition-all duration-500 ease-in-out"
-              style={{ width: "420px" }}
+              style={{ width: "580px" }}
             >
               <h2 className="text-xl font-sans text-center text-gray-500 mb-4 flex items-center justify-center">
                 Connect to your Google Colab{" "}
@@ -136,32 +138,34 @@ export default function Home() {
               </h2>
               {/* Error Message if flaskStatus is false */}
               {flaskStatus === false && (
-                <div className="p-2 bg-transparent rounded-lg shadow-sm max-w-sm w-full text-center">
-                  <div className="flex items-center justify-center gap-2">
-                    {/* Error Icon */}
-                    <div className="relative h-4 w-4 mb-2">
-                      <div className="absolute inset-0 rounded-full bg-red-500 opacity-75 animate-ping"></div>
-                      <div className="h-full w-full rounded-full bg-red-500 flex items-center justify-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-4 w-4 text-white"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M6 18L18 6M6 6l12 12"
-                          />
-                        </svg>
+                <div className="flex items-center justify-center ">
+                  <div className="p-2 bg-transparent rounded-lg shadow-sm max-w-sm w-full text-center">
+                    <div className="flex items-center justify-center gap-2">
+                      {/* Error Icon */}
+                      <div className="relative h-4 w-4 mb-2">
+                        <div className="absolute inset-0 rounded-full bg-red-500 opacity-75 animate-ping"></div>
+                        <div className="h-full w-full rounded-full bg-red-500 flex items-center justify-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-4 w-4 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M6 18L18 6M6 6l12 12"
+                            />
+                          </svg>
+                        </div>
                       </div>
+                      {/* Error Message */}
+                      <h2 className="text-sm font-semibold text-gray-700 mb-2">
+                        Invalid URL or app not running.
+                      </h2>
                     </div>
-                    {/* Error Message */}
-                    <h2 className="text-sm font-semibold text-gray-700 mb-2">
-                      Invalid URL or app not running.
-                    </h2>
                   </div>
                 </div>
               )}
@@ -173,6 +177,26 @@ export default function Home() {
                   className="px-4 py-2 rounded-md bg-transparent border-2 border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500"
                   onChange={handleInputChange}
                 />
+                {/* Info Message */}
+                <p className="flex items-center space-x-3 p-2 text-blue-800 border-l-4 border-blue-500 rounded-lg shadow-md bg-transparent">
+                  <FontAwesomeIcon
+                    icon={faCircleInfo}
+                    className="text-blue-500 w-4 h-4"
+                  />
+                  <span className="text-sm">
+                    Follow the steps in the{" "}
+                    <a
+                      href="https://github.com/bensaied/GreenGuru"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 underline"
+                    >
+                      repo
+                    </a>{" "}
+                    to start GreenGuru-Flask and get ngrok link.
+                  </span>
+                </p>
+
                 {/* Connect Button */}
                 <button
                   className="mt-4 py-2 px-6 bg-green-500 text-white rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-green-600 hover:scale-105"
