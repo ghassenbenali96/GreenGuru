@@ -116,7 +116,7 @@ export default function Home() {
             {!showForm && (
               <button
                 onClick={handleButtonClick}
-                className="mt-[-50px] relative overflow-hidden flex items-center px-6 py-3 bg-green-500 text-white rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-105 hover:bg-green-600 hover:shadow-xl focus:outline-none"
+                className="mt-[-50px] relative overflow-hidden flex items-center px-6 py-3 bg-green-500 text-white rounded-full shadow-lg transform transition duration-100 ease-in-out hover:scale-105 hover:bg-green-600 hover:shadow-xl focus:outline-none"
               >
                 <PiPlant className="mr-2 text-xl" />
                 Get Started
