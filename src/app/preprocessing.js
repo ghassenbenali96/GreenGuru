@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { RiUploadCloud2Line } from "react-icons/ri";
 import { TbPlant2 } from "react-icons/tb";
 import Head from "next/head";
 
@@ -102,7 +103,7 @@ const Preprocessing = ({ ngrokURL }) => {
             onClick={() => document.getElementById("file-input").click()}
             className="flex items-center justify-center gap-2 px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transform hover:scale-105 transition-transform duration-300"
           >
-            <TbPlant2 />
+            <RiUploadCloud2Line />
             Upload Plant Image
           </button>
 
@@ -125,9 +126,10 @@ const Preprocessing = ({ ngrokURL }) => {
               />
               <button
                 onClick={handleUpload}
-                className="mt-2 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition duration-300"
+                className="mt-4 flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-500 to-cyan-600 text-white text-sm font-bold rounded-full shadow-lg hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-4 focus:ring-cyan-300 focus:ring-offset-2 transform hover:scale-105 transition-transform duration-300"
               >
-                Confirm Upload
+                <TbPlant2 className="text-lg" />
+                Classify Plant
               </button>
             </div>
           )}
