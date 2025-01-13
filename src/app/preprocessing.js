@@ -1,11 +1,16 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { TbPlant2 } from "react-icons/tb";
 import Head from "next/head";
 
 const Preprocessing = ({ ngrokURL }) => {
   // Connect to GoogleColab
   const [flaskStatus, setFlaskStatus] = useState(null);
+  // Upload and manage image
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [preview, setPreview] = useState(null);
 
+  // useEffect for GreenGuru-Flask Status
   useEffect(() => {
     const checkFlaskReadiness = async (ngrokUrl) => {
       try {
@@ -27,6 +32,29 @@ const Preprocessing = ({ ngrokURL }) => {
       checkFlaskReadiness(ngrokURL);
     }
   }, [ngrokURL]);
+  // Handle Image Change
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setSelectedFile(file);
+
+      // Generate a preview URL
+      const previewUrl = URL.createObjectURL(file);
+      setPreview(previewUrl);
+    }
+  };
+  // Handle Upload Image
+  const handleUpload = () => {
+    if (selectedFile) {
+      // Upload logic (e.g., sending the file to a server or API)
+      alert(`Uploading: ${selectedFile.name}`);
+      // Reset file input after upload
+      setSelectedFile(null);
+      setPreview(null);
+    } else {
+      alert("No file selected!");
+    }
+  };
 
   return (
     // Preprocessing if the user connect to GoogleColab through Ngrok
@@ -67,6 +95,44 @@ const Preprocessing = ({ ngrokURL }) => {
         className="fixed top-[65%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white bg-opacity-30 p-6 rounded-xl shadow-lg transition-all duration-500 ease-in-out"
         style={{ width: "350px", marginTop: "30px" }}
       >
+        {/* Upload Button */}
+        <div className="flex flex-col items-center mb-4">
+          {/* Upload Button */}
+          <button
+            onClick={() => document.getElementById("file-input").click()}
+            className="flex items-center justify-center gap-2 px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transform hover:scale-105 transition-transform duration-300"
+          >
+            <TbPlant2 />
+            Upload Plant Image
+          </button>
+
+          {/* Hidden File Input */}
+          <input
+            id="file-input"
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={handleImageChange}
+          />
+
+          {/* Preview Section */}
+          {preview && (
+            <div className="mt-4 flex flex-col items-center">
+              <img
+                src={preview}
+                alt="Plant Preview"
+                className="w-32 h-32 object-cover rounded-lg shadow-md"
+              />
+              <button
+                onClick={handleUpload}
+                className="mt-2 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition duration-300"
+              >
+                Confirm Upload
+              </button>
+            </div>
+          )}
+        </div>
+
         <div className="flex flex-col space-y-4">
           {flaskStatus === true ? (
             <div className="p-2 bg-transparent rounded-lg shadow-sm max-w-sm w-full text-center">
