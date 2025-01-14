@@ -82,14 +82,25 @@ const Preprocessing = ({ ngrokURL }) => {
       </div>
 
       {/* Logo */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center top-0 transition-all duration-500 ease-in-out">
-        <img
-          title="GreenGuru"
-          src="/logo.png"
-          alt="GreenGuru Logo"
-          className="max-w-md"
-        />
-      </div>
+      {preview ? (
+        <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center top-0 transition-all duration-500 ease-in-out">
+          <img
+            title="GreenGuru"
+            src="/logo.png"
+            alt="GreenGuru Logo"
+            className="max-w-md"
+          />
+        </div>
+      ) : (
+        <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center top-20 transition-all duration-500 ease-in-out">
+          <img
+            title="GreenGuru"
+            src="/logo.png"
+            alt="GreenGuru Logo"
+            className="max-w-md"
+          />
+        </div>
+      )}
 
       {/* Form */}
       <div
