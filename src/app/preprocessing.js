@@ -82,7 +82,7 @@ const Preprocessing = ({ ngrokURL }) => {
       </div>
 
       {/* Logo */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center top-10 transition-all duration-500 ease-in-out">
+      <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center top-0 transition-all duration-500 ease-in-out">
         <img
           title="GreenGuru"
           src="/logo.png"
@@ -94,7 +94,7 @@ const Preprocessing = ({ ngrokURL }) => {
       {/* Form */}
       <div
         className="fixed top-[65%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white bg-opacity-30 p-6 rounded-xl shadow-lg transition-all duration-500 ease-in-out"
-        style={{ width: "350px", marginTop: "30px" }}
+        style={{ width: "350px", marginTop: "15px" }}
       >
         {/* Upload Button */}
         <div className="flex flex-col items-center mb-4">
