@@ -42,7 +42,7 @@ const Preprocessing = ({ ngrokURL }) => {
     const file = event.target.files[0];
     if (file) {
       setSelectedFile(file);
-
+      setResult(null);
       // Generate a preview URL
       const previewUrl = URL.createObjectURL(file);
       setPreview(previewUrl);
