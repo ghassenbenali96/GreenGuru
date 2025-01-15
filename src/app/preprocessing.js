@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { RiUploadCloud2Line } from "react-icons/ri";
 import { TbPlant2 } from "react-icons/tb";
+import { FaSpinner } from "react-icons/fa";
 import Head from "next/head";
 
 const Preprocessing = ({ ngrokURL }) => {
@@ -10,6 +11,9 @@ const Preprocessing = ({ ngrokURL }) => {
   // Upload and manage image
   const [selectedFile, setSelectedFile] = useState(null);
   const [preview, setPreview] = useState(null);
+  // Predict and display result & loading
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   // useEffect for GreenGuru-Flask Status
   useEffect(() => {
@@ -45,15 +49,36 @@ const Preprocessing = ({ ngrokURL }) => {
     }
   };
   // Handle Upload Image
-  const handleUpload = () => {
+  const handleClassify = async () => {
     if (selectedFile) {
-      // Upload logic (e.g., sending the file to a server or API)
-      alert(`Uploading: ${selectedFile.name}`);
-      // Reset file input after upload
-      setSelectedFile(null);
-      setPreview(null);
+      const formData = new FormData();
+      formData.append("file", selectedFile);
+      console.log(selectedFile);
+
+      try {
+        setLoading(true);
+        const formattedNgrokUrl = ngrokURL.endsWith("/")
+          ? ngrokURL
+          : `${ngrokURL}/`;
+
+        const response = await fetch(`${formattedNgrokUrl}predict`, {
+          method: "POST",
+          body: formData,
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          setResult(data.prediction);
+        } else {
+          setResult("Failed to get a prediction. Please try again.");
+        }
+      } catch (error) {
+        setResult("Failed to get a prediction. Please try again.");
+      } finally {
+        setLoading(false);
+      }
     } else {
-      alert("No file selected!");
+      setResult("No file selected!");
     }
   };
 
@@ -128,20 +153,42 @@ const Preprocessing = ({ ngrokURL }) => {
           />
 
           {/* Preview Section */}
-          {preview && (
+          {preview && !result && (
             <div className="mt-4 flex flex-col items-center">
               <img
                 src={preview}
                 alt="Plant Preview"
                 className="w-32 h-32 object-cover rounded-lg shadow-md"
               />
-              <button
-                onClick={handleUpload}
-                className="mt-4 flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-500 to-cyan-600 text-white text-sm font-bold rounded-full shadow-lg hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-4 focus:ring-cyan-300 focus:ring-offset-2 transform hover:scale-105 transition-transform duration-300"
-              >
-                <TbPlant2 className="text-lg" />
-                Classify Plant
-              </button>
+              {loading ? (
+                <div className="mt-4 flex flex-col items-center gap-2">
+                  <div className="animate-spin text-teal-500">
+                    <FaSpinner className="w-8 h-8" />
+                  </div>
+                  <p className="text-teal-600 font-semibold text-sm">
+                    Loading...
+                  </p>
+                </div>
+              ) : (
+                <button
+                  onClick={handleClassify}
+                  className="mt-4 flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-500 to-cyan-600 text-white text-sm font-bold rounded-full shadow-lg hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-4 focus:ring-cyan-300 focus:ring-offset-2 transform hover:scale-105 transition-transform duration-300"
+                >
+                  <TbPlant2 className="text-lg" />
+                  Classify Plant
+                </button>
+              )}
+            </div>
+          )}
+
+          {result && (
+            <div className="mt-4 flex flex-col items-center">
+              <img
+                src={preview}
+                alt="Plant Preview"
+                className="w-32 h-32 object-cover rounded-lg shadow-md"
+              />
+              <p className="text-green-500 font-bold text-lg mt-2">{result}</p>
             </div>
           )}
         </div>
