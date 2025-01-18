@@ -30,11 +30,7 @@ This app ensures efficient predictions and reliable results to support agricultu
 **Deployment:** Vercel
 
 **Machine Learning Method:** CNN (Convolutional Neural Network)
-  You can test the classification using static machine learning techniques(KNN, SVM and RandomForest) and manual feature extraction(based on contour and LBP (Local Binary Patterns) methods.
-
-
-
-
+You can test the classification using static machine learning techniques(KNN, SVM and RandomForest) and manual feature extraction(based on contour and LBP (Local Binary Patterns) methods.
 
 ---
 
@@ -90,7 +86,7 @@ This app ensures efficient predictions and reliable results to support agricultu
 
 #### 3.1 Open the GreenGuru GUI
 
-- Open the [GreenGuru GUI](#).
+- Open the [GreenGuru GUI](https://green-guru.vercel.app/).
 
 ![GreenGuruDashboard](https://github.com/user-attachments/assets/307f6a4f-9508-4e0d-b9bf-11b8528e6dec)
 
