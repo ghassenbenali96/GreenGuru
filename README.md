@@ -1,6 +1,6 @@
 # GreenGuru
 
-GreenGuru is a web app designed for plant classification and parasitic herb detection. Using advanced computer vision models, it accurately identifies 12 types of seedlings, including:
+GreenGuru is a web app designed for seedling classification and weed detection. Using advanced computer vision models, it accurately identifies 12 types of seedlings, including:
 
 - Black-grass
 - Charlock
