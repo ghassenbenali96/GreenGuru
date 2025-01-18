@@ -69,7 +69,7 @@ This app ensures efficient predictions and reliable results to support agricultu
 #### 2.2 Configure Your GreenGuru-FlaskApp
 
 - Paste your Ngrok **Authtoken** in the designated code section of the notebook.
-- 
+  
 ![NgrokSetup](https://github.com/user-attachments/assets/9462d1d9-0080-45c1-be7c-99afb4ffe439)
 
 #### 2.3 Run the GreenGuru-FlaskApp
