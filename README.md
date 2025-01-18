@@ -49,6 +49,28 @@ You can test the classification using static machine learning techniques(KNN, SV
 
 ---
 
+## 📥 Download Models
+
+Before running the GreenGuru-FlaskApp in Google Colab, you need to download the required models and upload them to the Colab environment.
+
+1. **GreenGuru Model**  
+   - **File:** `GreenGuruPT.pth`  
+   - **Description:** Contains model architecture, weights, and the state dictionary used for plant classification.  
+   - [Download GreenGuruPT.pth](https://files.fm/u/ufmgq5hk2x)
+
+2. **EDSR Model**  
+   - **File:** `EDSR`  
+   - **Description:** Model architecture and weights for enhancing image quality and resolution.  
+   - [Download EDSR](https://files.fm/u/qpndx67qm7)
+
+### How to Use
+
+1. Download the files using the links above.
+2. Upload the downloaded files to your Google Colab workspace.
+3. Ensure the files are in the same directory as the notebook to avoid errors during execution.
+
+---
+
 ## 🚀 Getting Started
 
 ### 1. Create an Ngrok Account
