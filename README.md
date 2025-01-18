@@ -17,6 +17,8 @@ GreenGuru is a web app designed for plant classification and parasitic herb dete
 
 This app ensures efficient predictions and reliable results to support agriculture and plant management.
 
+![logo](https://github.com/user-attachments/assets/18801c76-71d0-4a5b-ba9d-ac4710cd2a56)
+
 ---
 
 ## 🧰 Tech Stack
