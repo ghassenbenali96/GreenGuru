@@ -53,7 +53,6 @@ const Preprocessing = ({ ngrokURL }) => {
     if (selectedFile) {
       const formData = new FormData();
       formData.append("file", selectedFile);
-      console.log(selectedFile);
 
       try {
         setLoading(true);
@@ -66,14 +65,16 @@ const Preprocessing = ({ ngrokURL }) => {
           body: formData,
         });
 
+        // Wait for the response to finish, regardless of status
+        const data = await response.json();
+
         if (response.ok) {
-          const data = await response.json();
-          setResult(data.prediction);
+          setResult(data.prediction || "Prediction successful but no result.");
         } else {
-          setResult("Failed to get a prediction. Please try again.");
+          setResult(data.error || "Error occurred while processing.");
         }
       } catch (error) {
-        setResult("Failed to get a prediction. Please try again.");
+        setResult("A network error occurred. Please try again.");
       } finally {
         setLoading(false);
       }
