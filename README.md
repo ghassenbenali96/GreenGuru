@@ -93,7 +93,7 @@ This app ensures efficient predictions and reliable results to support agricultu
 
 - Paste the **Ngrok URL** from the previous step into the input field.
   
-![GreenGuruColabConnect](https://github.com/user-attachments/assets/923851d6-0296-463b-909b-d9859a9c0336)
+![GreenGuruColabConnect](https://github.com/user-attachments/assets/251d6a2f-e89f-499d-aa3d-e52bda2a5fb2)
 
 ### 4. Run the App
 
