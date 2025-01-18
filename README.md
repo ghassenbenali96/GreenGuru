@@ -129,8 +129,7 @@ Before running the GreenGuru-FlaskApp in Google Colab, you need to download the 
 ## 🔧 Troubleshooting
 
 - **Flask App Down:** If the Flask app is not running, restart the GreenGuru-FlaskApp in Google Colab (refer to Step 2).
-- **Ngrok Issues:** If the Ngrok Agent is down, restart it and regenerate the Ngrok URL.
-- **Notebook Crashes:** If the Google Colab notebook crashes, refresh the page and rerun the cells.
+- **Notebook Crashes:** If the Google Colab notebook crashes, refresh the page and rerun the cell.
 
 ---
 
