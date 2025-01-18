@@ -57,6 +57,8 @@ This app ensures efficient predictions and reliable results to support agricultu
 1. Visit the [Ngrok Website](https://dashboard.ngrok.com/) and sign up for an account.
 2. Go to your dashboard and locate your **Authtoken** under the "Auth" section.
 3. Copy the **Authtoken** for later use.
+   
+![AuthToken](https://github.com/user-attachments/assets/c65b67bf-ee54-462b-9afc-1996aa4ea254)
 
 ### 2. Setup GreenGuru-FlaskApp
 
@@ -67,22 +69,31 @@ This app ensures efficient predictions and reliable results to support agricultu
 #### 2.2 Configure Your GreenGuru-FlaskApp
 
 - Paste your Ngrok **Authtoken** in the designated code section of the notebook.
+- 
+![NgrokSetup](https://github.com/user-attachments/assets/9462d1d9-0080-45c1-be7c-99afb4ffe439)
 
 #### 2.3 Run the GreenGuru-FlaskApp
 
 1. Run the initial part of the notebook.
 2. Once executed, an Ngrok URL will be generated (e.g., `https://xyz.ngrok-free.app`). This URL connects your Flask server to the internet.
-3. Alternatively, check the running Ngrok Agent on the [Ngrok Agents](https://dashboard.ngrok.com/agents).
+   
+![NgrokLink](https://github.com/user-attachments/assets/2804e158-f256-4244-afed-f4c0e69fd54b)
 
+3. Alternatively, check the running Ngrok Agent on the [Ngrok Agents](https://dashboard.ngrok.com/agents).
+   
 ### 3. Setup GreenGuru GUI
 
 #### 3.1 Open the GreenGuru GUI
 
 - Open the [GreenGuru GUI](#).
+  
+![GreenGuruDashboard](https://github.com/user-attachments/assets/307f6a4f-9508-4e0d-b9bf-11b8528e6dec)
 
 #### 3.2 Enter Details
 
 - Paste the **Ngrok URL** from the previous step into the input field.
+  
+![GreenGuruColabConnect](https://github.com/user-attachments/assets/923851d6-0296-463b-909b-d9859a9c0336)
 
 ### 4. Run the App
 
