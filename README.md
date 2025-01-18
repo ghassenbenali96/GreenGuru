@@ -59,7 +59,7 @@ Before running the GreenGuru-FlaskApp in Google Colab, you need to download the 
    - [Download GreenGuruPT.pth](https://files.fm/u/ufmgq5hk2x)
 
 2. **EDSR Model**  
-   - **File:** `EDSR`  
+   - **File:** `EDSR_x3.pb`  
    - **Description:** Model architecture and weights for enhancing image quality and resolution.  
    - [Download EDSR](https://files.fm/u/qpndx67qm7)
 
@@ -68,6 +68,7 @@ Before running the GreenGuru-FlaskApp in Google Colab, you need to download the 
 1. Download the files using the links above.
 2. Upload the downloaded files to your Google Colab workspace.
 3. Ensure the files are in the same directory as the notebook to avoid errors during execution.
+4. Ensure the model paths for both `GreenGuruPT.pth` and `EDSR_x3.pb` **are correctly specified in the code**.
 
 ---
 
