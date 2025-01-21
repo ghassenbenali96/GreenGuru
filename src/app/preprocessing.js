@@ -138,7 +138,7 @@ const Preprocessing = ({ ngrokURL }) => {
           {/* Upload Button */}
           <button
             onClick={() => document.getElementById("file-input").click()}
-            className="flex items-center justify-center gap-2 px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transform hover:scale-105 transition-transform duration-300"
+            className="flex items-center justify-center gap-2 px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transform hover:scale-105 transition-transform duration-300 mt-4"
           >
             <RiUploadCloud2Line />
             Upload Plant Image

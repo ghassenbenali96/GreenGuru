@@ -132,7 +132,7 @@ export default function Home() {
               className="fixed top-[65%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white bg-opacity-30 p-6 rounded-xl shadow-lg transition-all duration-500 ease-in-out"
               style={{ width: "580px" }}
             >
-              <h2 className="text-xl font-sans text-center text-gray-500 mb-4 flex items-center justify-center">
+              <h2 className="text-xl font-sans text-center text-gray-700 mb-4 flex items-center justify-center">
                 Connect to your Google Colab{" "}
                 <Colab.Color size={18} className="ml-2" />
               </h2>
