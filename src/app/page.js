@@ -14,6 +14,7 @@ export default function Home() {
   // Connect to GoogleColab
   const [inputUrl, setInputUrl] = useState("");
   const [flaskStatus, setFlaskStatus] = useState(null);
+  const [error, setError] = useState(null);
 
   // Check GreenGuru-FlaskApp Status
   const checkFlaskReadiness = async (ngrokUrl) => {
@@ -48,9 +49,15 @@ export default function Home() {
     // Check if the entered URL matches the pattern
     if (!inputUrl || !urlPattern.test(inputUrl)) {
       setFlaskStatus(false);
+      setError(1);
       return;
     }
-
+    // Check the URL for ngrok-free.app Status
+    if (inputUrl.includes("ngrok-free.app")) {
+      setFlaskStatus(false);
+      setError(2);
+      return;
+    }
     try {
       const response = await fetch(inputUrl);
       if (!response.ok) {
@@ -162,9 +169,16 @@ export default function Home() {
                         </div>
                       </div>
                       {/* Error Message */}
-                      <h2 className="text-sm font-semibold text-gray-700 mb-2">
-                        Invalid URL or app not running.
-                      </h2>
+                      {error == 1 && (
+                        <h2 className="text-sm font-semibold text-gray-700 mb-2">
+                          Invalid URL.
+                        </h2>
+                      )}
+                      {error == 2 && (
+                        <h2 className="text-sm font-semibold text-gray-700 mb-2">
+                          GreenGuru Flask-App is not running.
+                        </h2>
+                      )}
                     </div>
                   </div>
                 </div>

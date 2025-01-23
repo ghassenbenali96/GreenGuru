@@ -75,11 +75,13 @@ const Preprocessing = ({ ngrokURL }) => {
           setResult(data.prediction || "Prediction successful but no result.");
         } else {
           setError(true);
+
           setResult(data.error || "Error occurred while processing.");
         }
       } catch (error) {
         setError(true);
         setResult("A network error occurred. Please try again.");
+        setFlaskStatus(false);
       } finally {
         setLoading(false);
       }
