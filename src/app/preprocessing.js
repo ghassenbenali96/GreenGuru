@@ -13,6 +13,7 @@ const Preprocessing = ({ ngrokURL }) => {
   const [preview, setPreview] = useState(null);
   // Predict and display result & loading
   const [result, setResult] = useState(null);
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
   // useEffect for GreenGuru-Flask Status
@@ -37,6 +38,7 @@ const Preprocessing = ({ ngrokURL }) => {
       checkFlaskReadiness(ngrokURL);
     }
   }, [ngrokURL]);
+
   // Handle Image Change
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -48,6 +50,7 @@ const Preprocessing = ({ ngrokURL }) => {
       setPreview(previewUrl);
     }
   };
+
   // Handle Upload Image
   const handleClassify = async () => {
     if (selectedFile) {
@@ -71,9 +74,11 @@ const Preprocessing = ({ ngrokURL }) => {
         if (response.ok) {
           setResult(data.prediction || "Prediction successful but no result.");
         } else {
+          setError(true);
           setResult(data.error || "Error occurred while processing.");
         }
       } catch (error) {
+        setError(true);
         setResult("A network error occurred. Please try again.");
       } finally {
         setLoading(false);
@@ -182,7 +187,7 @@ const Preprocessing = ({ ngrokURL }) => {
             </div>
           )}
 
-          {result && (
+          {result && !error && (
             <div className="mt-4 flex flex-col items-center">
               <img
                 src={preview}
@@ -190,6 +195,17 @@ const Preprocessing = ({ ngrokURL }) => {
                 className="w-32 h-32 object-cover rounded-lg shadow-md"
               />
               <p className="text-green-500 font-bold text-lg mt-2">{result}</p>
+            </div>
+          )}
+
+          {result && error && (
+            <div className="mt-4 flex flex-col items-center">
+              <img
+                src={preview}
+                alt="Error Preview"
+                className="w-32 h-32 object-cover rounded-lg shadow-md"
+              />
+              <p className="text-red-500 font-bold text-lg mt-2">{error}</p>
             </div>
           )}
         </div>
