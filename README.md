@@ -1,19 +1,21 @@
 # GreenGuru
 
-GreenGuru is a web app designed for seedling classification and weed detection. Using advanced computer vision models, it accurately identifies 12 types of seedlings, including:
+GreenGuru is a web app designed for seedling classification and weed detection, based on [V2 Plant Seedlings Dataset](https://www.kaggle.com/datasets/vbookshelf/v2-plant-seedlings-dataset) from Kaggle. Using computer vision models, it accurately identifies 12 types of seedlings, including:
 
+**Crop seedlings:**
+- Sugar beet
+- Common wheat
+- Maize
+**Weeds:**
 - Black-grass
 - Charlock
 - Cleavers
 - Common Chickweed
-- Common wheat
 - Fat Hen
 - Loose Silky-bent
-- Maize
 - Scentless Mayweed
 - Shepherd's Purse
 - Small-flowered Cranesbill
-- Sugar beet
 
 This app ensures efficient predictions and reliable results to support agriculture and plant management.
 
@@ -29,8 +31,9 @@ This app ensures efficient predictions and reliable results to support agricultu
 **Tunneling:** Ngrok\
 **Deployment:** Vercel
 
-**Machine Learning Method:** CNN (Convolutional Neural Network)
-You can test the classification using static machine learning techniques(KNN, SVM and RandomForest) and manual feature extraction(based on contour and LBP (Local Binary Patterns) methods.
+**Machine Learning Methods:** 
+- CNN (Convolutional Neural Network): the principal architecture for GreenGuru
+- Feature extraction (contour extraction and LBP methods) + ML techniques using Grid Search (KNN, SVM and RandomForest)
 
 ---
 
@@ -43,8 +46,7 @@ You can test the classification using static machine learning techniques(KNN, SV
 
 ## 🔥 Features
 
-- Classify plants into 12 categories, as listed above.
-- Detect parasitic herbs using machine learning.
+- Detect parasitic herbs and plant seedlings using machine learning.
 - Simple and intuitive interface for plant management.
 
 ---
@@ -133,17 +135,17 @@ Before running the GreenGuru-FlaskApp in Google Colab, you need to download the 
 
 ---
 
-Enjoy using GreenGuru to classify plants and detect parasitic herbs effortlessly!
+Feel free to experiment with GreenGuru and enhance its functionalities!
 
 ## 📝 Authors
 
-- GitHub: [@bensaied](https://www.github.com/bensaied)
+- GitHub: [@ghassenbenali96]([https://github.com/ghassenbenali96]
 
 ## Contributing
 
 Contributions are always welcome! Feel free to fork this repository and submit pull requests.
 
-- [Ghassen Ben Ali](https://github.com/ghassenbenali96)
+- [Oussama Ben Saied](https://www.github.com/bensaied)
 - [Ikram Loued](https://github.com/Ikramloued)
 
 ## 💝 Support
