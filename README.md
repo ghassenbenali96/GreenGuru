@@ -140,7 +140,7 @@ Feel free to experiment with GreenGuru and enhance its functionalities!
 
 ## 📝 Authors
 
-- GitHub: [@ghassenbenali96]([https://github.com/ghassenbenali96]
+- GitHub: [@ghassenbenali96][https://github.com/ghassenbenali96]
 
 ## Contributing
 
