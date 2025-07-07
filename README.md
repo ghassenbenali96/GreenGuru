@@ -6,6 +6,7 @@ GreenGuru is a web app designed for seedling classification and weed detection, 
 - Sugar beet
 - Common wheat
 - Maize
+  
 **Weeds:**
 - Black-grass
 - Charlock
